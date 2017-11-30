@@ -1,24 +1,21 @@
 function opsi(data){
     var allRows = data.split(/\r?\n|r/);
-    var table = "<table>";
+    var div = "<div class='table-responsive'>";
+    var table = "<table class='table'>";
         for(var singleRow = 0;singleRow<allRows.length;singleRow++){
             if(singleRow === 0){
                 table+="<thead>";
-                table+="<tr>";
+                table+="<th></th>";
             }else{
                 table+="<tr>";    
             }
+
         var rowCells = allRows[singleRow].split(',');
+        
         for(var rowSingleCell=0;rowSingleCell<rowCells.length;rowSingleCell++){
-            if(singleRow === 0){
-                table+="<th>";
-                table+=rowCells[rowSingleCell];
-                table+="</th>";
-            }else{
-                table+="<td>";
+                table+="<td class='text-center'>";
                 table+= rowCells[rowSingleCell];
                 table+="</td>";
-            }
         }
         if(singleRow === 0){
             table+="<tr>";
@@ -30,6 +27,7 @@ function opsi(data){
     }
     table += "</tbody>"
     table+= "</table>";
+    div+="</div>";
     $("body").append(table);
 }
 $.ajax({
