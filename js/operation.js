@@ -5,7 +5,7 @@ function opsi(data){
         for(var singleRow = 0;singleRow<allRows.length;singleRow++){
             if(singleRow === 0){
                 table+="<thead>";
-                table+="<th></th>";
+                table+="<th class='text-center'>Sector | Temperatura </th>";
             }else{
                 table+="<tr>";    
             }
